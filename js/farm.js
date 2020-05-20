@@ -219,13 +219,11 @@ class Farm {
                 console.log('Животных пригодных в пищу больше не осталось');
                 return true;
             }
-            for(let i=0; i<animals._allHomeAnimals.length;i++) {
-                do {
-                    animals.getPrey();
-                }while(animals._prey.type!=='Корова' && animals._prey.type!=='Курица' && animals._prey.type!=='Кролик');
-                farmer.eatAnimal(animals._prey);
-                return true;
-            }
+            do {
+                animals.getPrey();
+            }while(animals._prey.type!=='Корова' && animals._prey.type!=='Курица' && animals._prey.type!=='Кролик');
+            farmer.eatAnimal(animals._prey);
+            return true;
         }
         for (let i = 0; i < animals._allHomeAnimals.length; i++)
             if(animals._allHomeAnimals[i].type === 'Корова' || animals._allHomeAnimals[i].type === 'Курица')
