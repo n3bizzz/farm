@@ -165,9 +165,9 @@ class Farmer{
         } else console.log(`У  ${animal.type} ${animal.name} нет ресурсов`);
     }
     eatAnimal(animal){
-        this._res=animal.weight;
+        this._res+=animal.weight;
         animal.onFarm=false;
-        console.log(`Фермер съел ${animal.type} ${animal.name}`);
+        console.log(`Фермер съел ${animal.type} ${animal.name}, стало ресурсов ${this._res}`);
     }
     kickHunter(){
          return Math.floor(Math.random()*2);
@@ -238,7 +238,7 @@ class Farm {
         return true;
     }
     info(animals,hunter,farmer) {
-        animals._allHomeAnimals.forEach((elem) => {
+        animals._allHomeAnimals.forEach((elem)=> {
             if (!elem.onFarm) console.log(`${elem.type} ${elem.name} съеден(а) или убит(а) диким зверем`);
             else console.log(`${elem.type} ${elem.name} на ферме, осталось ресурсов ${elem.res}, здоровье ${elem.health}`);
         });
