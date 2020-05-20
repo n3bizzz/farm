@@ -66,11 +66,6 @@ class GenHomeAnimals {
         }
     ];
     }
-    isAnyAnimalOnFarm(){
-        for(let elem of this._allHomeAnimals)
-            if(elem.onFarm)return true;
-            return false;
-    }
     getPrey(){
         do{
             this._prey=this._allHomeAnimals[Math.floor(Math.random()*this._allHomeAnimals.length)];
