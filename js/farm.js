@@ -213,9 +213,9 @@ class Farm {
         for (let i = 0; i < animals._allHomeAnimals.length; i++) {
             farmer.feedAnimal(animals._allHomeAnimals[i]);
         }
-        if (animals._allHomeAnimals.every((elem)=>!elem.res)) {
+        if (!animals._allHomeAnimals.some((elem)=>elem.res && elem.onFarm)) {
             console.log(`Животных с ресурсами на ферме не осталось прийдется кого-то съесть`);
-            if(!animals._allHomeAnimals.some((elem)=> (elem.type==='Корова' && elem.onFarm) || (elem.type === 'Кролик' && elem.onFarm) || (elem.type === 'Курица' && elem.onFarm))){
+            if(!animals._allHomeAnimals.some((elem)=> (elem.type ==='Корова' && elem.onFarm) || (elem.type === 'Кролик' && elem.onFarm) || (elem.type === 'Курица' && elem.onFarm))){
                 console.log('Животных пригодных в пищу больше не осталось');
                 return true;
             }
