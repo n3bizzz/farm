@@ -162,7 +162,7 @@ class Farmer{
     eatAnimal(animal){
         this._res+=animal.weight;
         animal.onFarm=false;
-        console.log(`Фермер съел ${animal.type} ${animal.name}, стало ресурсов ${this._res}`);
+        console.log(`Фермер съел ${animal.type} ${animal.name} вес ${animal.weight}, стало ресурсов ${this._res}`);
     }
     kickHunter(){
          return Math.floor(Math.random()*2);
